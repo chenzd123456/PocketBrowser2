@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>PockerBrowser</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <ul id="TabBar" class="nav nav-tabs">
+    </ul>
+    <div id="TabContent" class="tab-content">
+    </div>
+    <div class="StatusBar">
+    </div>
+</body>
+<script>
+    var tab_bar_height = 32;
+    var status_bar_height = 32;
+    var vwidth = document.documentElement.clientWidth;
+    var vheight = document.documentElement.clientHeight;
+    var tab_count = 0;
+    var addTab = function (url) {
+        $("#TabBar").children().removeClass('active');
+        $("#TabContent").children().removeClass('active');
+        $("#TabBar").append("<li class='active'><a href='#tab" + tab_count + "' data-toggle='tab'>" + url + "</a></li>");
+        $("#TabContent").append("<div class='tab-pane fade in active' id='tab" + tab_count + "'><iframe src='" + url + "' frameborder='0' scrolling='yes' seamless></iframe></div>");
+        $("iframe").css({ "width": vwidth, "height": vheight - tab_bar_height - status_bar_height });
+        tab_count += 1;
+    }
+</script>
+</html>

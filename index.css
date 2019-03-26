@@ -1,0 +1,9 @@
+.StatusBar {
+    background-color:black;
+    position: absolute;
+    bottom: 0;
+}
+
+.nav nav-tabs {
+    color:#000000
+}
