@@ -28,13 +28,12 @@
         $("#TabBar").children().removeClass('active');
         $("#TabContent").children().removeClass('active');
         $("#TabBar").append("<li class='active'><a href='#tab" + tab_count + "' data-toggle='tab'>" + url + "</a></li>");
-        $("#TabContent").append("<div class='tab-pane fade in active' id='tab" + tab_count + "'><iframe src='" + url + "' frameborder='0' scrolling='yes' seamless></iframe></div>");
+        $("#TabContent").append("<div class='tab-pane in active' id='tab" + tab_count + "'><iframe src='" + url + "' frameborder='0' scrolling='yes' seamless></iframe></div>");
         $("iframe").css({ "width": vwidth, "height": vheight - tab_bar_height - status_bar_height });
         tab_count += 1;
     };
 
     addTab("https://www.baidu.com");
-    addTab("https://www.hao123.com");
     addTab("https://www.bing.com");
 </script>
 </html>
